@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matchara | Matcha & Pink Aesthetics</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <!-- AOS Library for Animations -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --matcha-deep: #2D3E2F;
+            --matcha-main: #5B8C5A;
+            --matcha-light: #F4F7F2;
+            --pink-pastel: #FFD1DC;
+            --pink-accent: #FFB7C5;
+            --pink-deep: #D48C9A;
+        }
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            overflow-x: hidden;
+            background-color: var(--matcha-light);
+        }
+        h1, h2, .font-serif {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        /* Custom Gradients: Matcha & Pink Mix */
+        .grad-matcha-pink {
+            background: linear-gradient(135deg, #F4F7F2 0%, #FFD1DC 100%);
+        }
+        .grad-matcha-solid {
+            background: linear-gradient(135deg, #5B8C5A 0%, #2D3E2F 100%);
+        }
+        .grad-pink-solid {
+            background: linear-gradient(135deg, #FFD1DC 0%, #FFB7C5 100%);
+        }
+        .grad-strawberry-matcha {
+            background: linear-gradient(135deg, #5B8C5A 0%, #FFD1DC 100%);
+        }
+        
+        .glass { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(12px); }
+        
+        /* Animations */
+        @keyframes float {
+            0% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-15px) rotate(2deg); }
+            100% { transform: translateY(0px) rotate(0deg); }
+        }
+        .animate-float {
+            animation: float 5s ease-in-out infinite;
+        }
+
+        .blob-pink {
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: var(--pink-pastel);
+            filter: blur(80px);
+            border-radius: 50%;
+            z-index: -1;
+            opacity: 0.6;
+        }
+
+        .product-card, .review-card {
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .product-card:hover, .review-card:hover {
+            transform: translateY(-10px);
+        }
+
+        /* Custom Selection Color */
+        ::selection {
+            background: var(--pink-pastel);
+            color: var(--matcha-deep);
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 glass border-b border-[#FFD1DC] transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold tracking-tighter text-[#2D3E2F] flex items-center gap-2">
+                <span class="text-3xl">🍵</span> MATCHARA
+            </div>
+            <div class="hidden md:flex space-x-8 font-medium">
+                <a href="#about" class="hover:text-[#5B8C5A] transition">Tentang</a>
+                <a href="#products" class="hover:text-[#FFB7C5] transition">Koleksi</a>
+                <a href="#reviews" class="hover:text-[#FFB7C5] transition">Testimoni</a>
+                <a href="#benefits" class="hover:text-[#5B8C5A] transition">Manfaat</a>
+            </div>
+            <a href="https://wa.me/6282229164599" target="_blank" class="bg-[#5B8C5A] text-white px-6 py-2 rounded-full font-semibold hover:bg-[#FFB7C5] hover:text-[#2D3E2F] transition-all shadow-sm">Shop Now</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center pt-20 overflow-hidden grad-matcha-pink">
+        <div class="blob-pink top-20 -right-20"></div>
+        <div class="blob-pink bottom-0 -left-20" style="background: #E2E8DE;"></div>
+
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center relative z-10">
+            <div data-aos="fade-right">
+                <span class="inline-block px-4 py-1 rounded-full bg-white text-[#5B8C5A] font-bold text-xs mb-6 shadow-sm uppercase tracking-widest border border-[#FFD1DC]">The Perfect Blend</span>
+                <h1 class="text-6xl md:text-8xl font-bold text-[#2D3E2F] mb-6 leading-tight">Matcha Meets <br><span class="text-[#D48C9A]">Pink Bliss.</span></h1>
+                <p class="text-lg text-gray-600 mb-10 leading-relaxed max-w-md">
+                    Nikmati sensasi Matcha premium dengan sentuhan estetika Pink Pastel. Menenangkan, menyegarkan, dan penuh gaya.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="#products" class="bg-[#5B8C5A] text-white px-8 py-4 rounded-full font-bold text-center hover:shadow-xl hover:bg-[#2D3E2F] transition-all">Lihat Produk</a>
+                    <a href="https://wa.me/6282229164599" class="bg-white border-2 border-[#FFD1DC] text-[#D48C9A] px-8 py-4 rounded-full font-bold text-center hover:bg-[#FFD1DC] transition-all">Hubungi Kami</a>
+                </div>
+            </div>
+            <div class="relative flex justify-center" data-aos="zoom-in">
+                <div class="animate-float">
+                    <div class="w-72 h-72 md:w-[450px] md:h-[450px] bg-white rounded-full flex items-center justify-center shadow-[0_20px_50px_rgba(255,209,220,0.5)] border-8 border-[#F4F7F2] relative overflow-hidden">
+                        <!-- Decorative Content -->
+                        <div class="absolute inset-0 grad-strawberry-matcha opacity-20"></div>
+                        <span class="text-9xl md:text-[180px] relative z-10">🌸</span>
+                        <div class="absolute bottom-10 text-center z-10">
+                            <p class="text-[#2D3E2F] font-bold tracking-widest text-sm uppercase">Strawberry Matcha Edition</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Section -->
+    <section class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-8">
+            <div class="p-8 rounded-3xl bg-[#F4F7F2] border-b-4 border-[#5B8C5A]" data-aos="fade-up">
+                <div class="text-3xl mb-4">🍵</div>
+                <h3 class="font-bold text-xl mb-2 text-[#2D3E2F]">Pure Green</h3>
+                <p class="text-gray-500">Kualitas matcha terbaik langsung dari perkebunan Uji, Jepang.</p>
+            </div>
+            <div class="p-8 rounded-3xl bg-[#FFD1DC]/30 border-b-4 border-[#FFB7C5]" data-aos="fade-up" data-aos-delay="100">
+                <div class="text-3xl mb-4">💖</div>
+                <h3 class="font-bold text-xl mb-2 text-[#2D3E2F]">Sweet Calm</h3>
+                <p class="text-gray-500">Keseimbangan rasa yang menenangkan jiwa dan pikiranmu.</p>
+            </div>
+            <div class="p-8 rounded-3xl bg-[#F4F7F2] border-b-4 border-[#5B8C5A]" data-aos="fade-up" data-aos-delay="200">
+                <div class="text-3xl mb-4">🍃</div>
+                <h3 class="font-bold text-xl mb-2 text-[#2D3E2F]">Eco-Chic</h3>
+                <p class="text-gray-500">Kemasan estetik yang ramah lingkungan dan dapat didaur ulang.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products -->
+    <section id="products" class="py-24 grad-matcha-pink">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16" data-aos="fade-down">
+                <h2 class="text-4xl md:text-5xl font-bold text-[#2D3E2F]">Matchara Collection</h2>
+                <p class="mt-4 text-[#D48C9A] font-medium tracking-widest uppercase text-sm">Pilih Favoritmu</p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-12">
+                <!-- Product 1 -->
+                <div class="product-card bg-white rounded-[3rem] p-4 shadow-lg overflow-hidden border border-[#FFD1DC]" data-aos="fade-right">
+                    <div class="rounded-[2.5rem] overflow-hidden h-80 relative">
+                        <img src="https://static.independent.co.uk/2024/10/28/14/ancient-and-brave-matcha-The-Independent.jpg" class="w-full h-full object-cover" alt="Ceremonial">
+                        <div class="absolute top-4 right-4 bg-[#5B8C5A] text-white px-4 py-1 rounded-full text-xs font-bold">PREMIUM</div>
+                    </div>
+                    <div class="p-8 flex justify-between items-end">
+                        <div>
+                            <h3 class="text-2xl font-bold text-[#2D3E2F] mb-2">Ceremonial Grade</h3>
+                            <p class="text-gray-500 mb-6">Kemurnian tanpa batas untuk ritualmu.</p>
+                            <span class="text-2xl font-bold text-[#5B8C5A]">IDR 185k</span>
+                        </div>
+                        <a href="https://wa.me/6282229164599" class="bg-[#FFD1DC] p-4 rounded-2xl hover:bg-[#FFB7C5] transition-colors">
+                            <i class="fas fa-shopping-bag text-[#D48C9A]"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- Product 2 -->
+                <div class="product-card bg-white rounded-[3rem] p-4 shadow-lg overflow-hidden border border-[#5B8C5A]/20" data-aos="fade-left">
+                    <div class="rounded-[2.5rem] overflow-hidden h-80 relative">
+                        <img src="https://www.birdandblendtea.com/cdn/shop/files/magical-matcha-selection-box-flavours.jpg?v=1714033207&width=750" class="w-full h-full object-cover" alt="Daily Blend">
+                        <div class="absolute top-4 right-4 bg-[#FFB7C5] text-[#2D3E2F] px-4 py-1 rounded-full text-xs font-bold">LIMITED</div>
+                    </div>
+                    <div class="p-8 flex justify-between items-end">
+                        <div>
+                            <h3 class="text-2xl font-bold text-[#2D3E2F] mb-2">Daily Selection Box</h3>
+                            <p class="text-gray-500 mb-6">Koleksi rasa dalam satu kotak ajaib.</p>
+                            <span class="text-2xl font-bold text-[#5B8C5A]">IDR 2.000k</span>
+                        </div>
+                        <a href="https://wa.me/6282229164599" class="bg-[#5B8C5A] p-4 rounded-2xl hover:bg-[#2D3E2F] transition-colors">
+                            <i class="fas fa-shopping-bag text-white"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section id="reviews" class="py-24 bg-white relative overflow-hidden">
+        <div class="blob-pink -top-20 -left-20" style="opacity: 0.3;"></div>
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl md:text-5xl font-bold text-[#2D3E2F]">Apa Kata Mereka?</h2>
+                <p class="mt-4 text-[#D48C9A] font-medium tracking-widest uppercase text-sm">Cerita dari Pecinta Matchara</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Review 1 -->
+                <div class="review-card p-8 rounded-[2.5rem] bg-[#F4F7F2] border border-[#FFD1DC] shadow-sm" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-14 h-14 rounded-full bg-[#FFB7C5] flex items-center justify-center text-[#2D3E2F] text-xl font-bold">
+                            <i class="fas fa-user-circle text-white text-3xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-[#2D3E2F]">Alya Rahma</h4>
+                            <div class="flex text-[#FFB7C5] text-sm">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic">"Matcha paling estetik! Warnanya hijau banget dan packagingnya gemas banget warna pink. Rasanya super smooth!"</p>
+                </div>
+                <!-- Review 2 -->
+                <div class="review-card p-8 rounded-[2.5rem] bg-white border border-[#FFD1DC] shadow-md" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-14 h-14 rounded-full bg-[#5B8C5A] flex items-center justify-center text-white text-xl font-bold">
+                            <i class="fas fa-user-circle text-white text-3xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-[#2D3E2F]">Dimas Yoga</h4>
+                            <div class="flex text-[#FFB7C5] text-sm">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic">"Beli yang Ceremonial Grade buat kado pacar, dia suka banget. Rasa umaminya dapet banget dan nggak pahit."</p>
+                </div>
+                <!-- Review 3 -->
+                <div class="review-card p-8 rounded-[2.5rem] bg-[#F4F7F2] border border-[#FFD1DC] shadow-sm" data-aos="fade-up" data-aos-delay="300">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-14 h-14 rounded-full bg-[#FFB7C5] flex items-center justify-center text-[#2D3E2F] text-xl font-bold">
+                            <i class="fas fa-user-circle text-white text-3xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-[#2D3E2F]">Saraswati</h4>
+                            <div class="flex text-[#FFB7C5] text-sm">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic">"Ritual pagi jadi lebih tenang semenjak minum Matchara. Campur susu oat jadi Strawberry Matcha latte yang sempurna!"</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-24 bg-white px-6">
+        <div class="max-w-5xl mx-auto grad-matcha-solid rounded-[3rem] p-12 md:p-20 text-center text-white relative overflow-hidden shadow-2xl" data-aos="zoom-in">
+            <div class="relative z-10">
+                <h2 class="text-4xl md:text-6xl font-bold mb-6 italic font-serif">Stay Calm, Stay Pink.</h2>
+                <p class="text-lg mb-10 opacity-80">Dapatkan koleksi Matchara sekarang dan warnai harimu.</p>
+                <a href="https://wa.me/6282229164599" class="bg-[#FFD1DC] text-[#2D3E2F] px-12 py-4 rounded-full font-bold text-xl hover:bg-white transition-all inline-block shadow-lg">Beli via WhatsApp</a>
+            </div>
+            <!-- Decorative circles -->
+            <div class="absolute -top-10 -left-10 w-40 h-40 bg-[#FFD1DC] opacity-20 rounded-full"></div>
+            <div class="absolute -bottom-10 -right-10 w-60 h-60 bg-[#FFB7C5] opacity-20 rounded-full"></div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#F4F7F2] py-16 border-t border-[#FFD1DC]">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <div class="text-2xl font-bold text-[#2D3E2F] mb-8">MATCHARA</div>
+            <div class="flex justify-center space-x-6 mb-12">
+                <a href="#" class="w-12 h-12 flex items-center justify-center rounded-full bg-white shadow-sm hover:text-[#FFB7C5] transition"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="w-12 h-12 flex items-center justify-center rounded-full bg-white shadow-sm hover:text-[#5B8C5A] transition"><i class="fab fa-tiktok"></i></a>
+                <a href="https://wa.me/6282229164599" class="w-12 h-12 flex items-center justify-center rounded-full bg-white shadow-sm hover:text-green-500 transition"><i class="fab fa-whatsapp"></i></a>
+            </div>
+            <p class="text-gray-400 text-sm">© 2026 MATCHARA. Dibuat dengan cinta, matcha, dan warna pink.</p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 1000, once: true });
+        
+        // Simple Navbar Scroll Effect
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('shadow-lg', 'py-2');
+                nav.classList.remove('py-4');
+            } else {
+                nav.classList.remove('shadow-lg', 'py-2');
+                nav.classList.add('py-4');
+            }
+        });
+    </script>
+</body>
+</html>
